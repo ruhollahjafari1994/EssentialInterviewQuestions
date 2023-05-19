@@ -42,9 +42,9 @@ Question:
 Answer:
 The using keyword in C# has two main uses: disposing of unmanaged resources and aliasing namespaces.
 
-    Disposing of unmanaged resources: The using keyword is primarily used to ensure proper disposal of unmanaged resources, such as file handles or database connections. It provides a convenient syntax to automatically dispose of objects that implement the IDisposable interface. When an object is declared within a using block, it is guaranteed to be disposed of at the end of the block, even if an exception occurs.
+Disposing of unmanaged resources: The using keyword is primarily used to ensure proper disposal of unmanaged resources, such as file handles or database connections. It provides a convenient syntax to automatically dispose of objects that implement the IDisposable interface. When an object is declared within a using block, it is guaranteed to be disposed of at the end of the block, even if an exception occurs.
     
-    using (var fileStream = new FileStream("example.txt", FileMode.Open))
+using (var fileStream = new FileStream("example.txt", FileMode.Open))
 {
     // Perform operations with the fileStream
 }
