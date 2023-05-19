@@ -17,15 +17,47 @@ Question:
 Answer:
 The is and as keywords in C# are used for type checking and type conversion, respectively, but they have some differences.
 
-The is keyword is used to check if an object is of a specific type. It evaluates to a Boolean value, true if the object is of the specified type, and false otherwise. It is typically used in conditional statements or as a guard clause before performing type-specific operations. For example:
+The is keyword is used to check if an object is of a specific type. It evaluates to a Boolean value, true if the object is of the specified type, and false otherwise. It is typically used in conditional statements or as a guard clause before performing type-specific operations. 
+For example:
+
 if (myObject is MyClass)
 {
     // Perform operations specific to MyClass
 }
-On the other hand, the as keyword is used for safe type casting or type conversion. It attempts to cast an object to a specified type, and if the cast is successful, it returns the object of that type; otherwise, it returns null. It is useful when you want to convert an object to a different type without throwing an exception if the conversion fails. For example:
+
+On the other hand, the as keyword is used for safe type casting or type conversion. It attempts to cast an object to a specified type, and if the cast is successful, it returns the object of that type; otherwise, it returns null. It is useful when you want to convert an object to a different type without throwing an exception if the conversion fails.
+For example:
+
 MyClass myObject = someObject as MyClass;
 if (myObject != null)
 {
     // Perform operations with myObject
 }
+
 In summary, the is keyword is used for type checking, while the as keyword is used for type conversion with a safe null-checking mechanism.
+
+Question:
+3- What is the use of the using keyword?
+
+Answer:
+The using keyword in C# has two main uses: disposing of unmanaged resources and aliasing namespaces.
+
+    Disposing of unmanaged resources: The using keyword is primarily used to ensure proper disposal of unmanaged resources, such as file handles or database connections. It provides a convenient syntax to automatically dispose of objects that implement the IDisposable interface. When an object is declared within a using block, it is guaranteed to be disposed of at the end of the block, even if an exception occurs.
+    
+    using (var fileStream = new FileStream("example.txt", FileMode.Open))
+{
+    // Perform operations with the fileStream
+}
+
+Aliasing namespaces: The using keyword is also used to create aliases for namespaces to avoid having to fully qualify types from that namespace. It simplifies the usage of types within the specified namespace. Instead of writing the fully qualified name each time, you can use the alias defined by the using directive.
+
+using System.IO; // Aliasing the System.IO namespace
+
+// Usage without alias
+FileStream fileStream1 = new System.IO.FileStream("example.txt", FileMode.Open);
+
+// Usage with alias
+using FileStream fileStream2 = new FileStream("example.txt", FileMode.Open);
+
+In summary, the using keyword in C# is used for automatic disposal of unmanaged resources through the IDisposable interface and for creating namespace aliases to simplify type usage.
+
