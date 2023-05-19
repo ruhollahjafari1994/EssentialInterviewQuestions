@@ -1,5 +1,5 @@
 # EssentialInterviewQuestions
- Essential Interview Questions
+
 Question:
 1- What is the difference between Tuples and ValueTuples?
 
